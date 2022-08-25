@@ -3,13 +3,15 @@
 if __name__ == "__main__":
     """Print the sum of 10 and 5."""
     from calculator_1 import *
-    print("{} + {} = {}".format(10, 5, add(10, 5)))
+    a = 10
+    b = 5
+    print("{} + {} = {}".format(a, b, add(a, b)))
 
     """Print the sub of 10 and 5."""
-    print("{} - {} = {}".format(10, 5, sub(10, 5)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
 
     """Print the mul of 10 and 5."""
-    print("{} + {} = {}".format(10, 5, mul(10, 5)))
+    print("{} + {} = {}".format(a, b, mul(a, b)))
 
     """Print the div of 10 and 5."""
-    print("{} + {} = {}".format(10, 5, div(10, 5)))
+    print("{} + {} = {}".format(a, b, div(a, b)))
