@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from operator import ne
-
-
 def divisible_by_2(my_list=[]):
     new_list = []
     if my_list:
