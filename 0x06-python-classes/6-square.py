@@ -1,48 +1,43 @@
 #!/usr/bin/python3
 """Define the class Square"""
 
+
 class Square:
     """Represents a square
-    
     Attributes:
         __size (int): size of the square
         __position (tuple): position of the square in 2D space
     """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Initializing the square
         Args:
            size (int): size of a side of the square
-        
         Returns:
             None
         """
         self.__size = size
         self.__position = position
-    
+    """Area the square"""
     def area(self):
         """calculates the square's area
-
         Returns:
             The area of the square
         """
         return (self.__size) ** 2
-    
+    """property Getter"""
     @property
     def size(self):
         """Getter of __size
-        
         Returns:
             The size of the square
         """
         return self.__size
-    
+    """Setter"""
     @size.setter
     def size(self, value):
         """Setter of __size
-        
         Args:
            Value (int): the size of a size of the square
-        
         Returns:
             None
         """
@@ -53,12 +48,10 @@ class Square:
                 raise ValueError("size must be >= 0")
             else:
                 self.__size = value
-    
+    """Print the square"""
     def my_print(self):
-        """Print the square
-        
-        Returns:
-            None
+        """Print the squareReturns:
+                    None
         """
         if self.__size == 0:
             print()
@@ -66,29 +59,26 @@ class Square:
         for i in range(self.__size):
             print("".join([" " for k in range(self.__position[0])]), end="")
             print("".join(["#" for j in range(self.__size)]))
-    
+    """Property position Getter"""
     @property
     def position(self):
         """Getter of __position
-        
         Returns:
             The position of the square
         """
         return self.__position
-    
+    """Property position Setter"""
     @position.setter
     def position(self, value):
         """Setter of __position
-        
         Args:
            Value (tuple): the position of the square in 2D space
-        
         Returns:
             None
         """
         if type(value) is not tuple or len(value) != 2 or \
-           type(value[0]) is not int or value[0] < 0 or \
+            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
-           raise TypeError("position must be an tuple of 2 positive integers")
+            raise TypeError("position must be an tuple of 2 positive integers")
         else:
             self.__position = value

@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Define the class Square"""
+
+
 class Square:
     """Represents a square
-    
     Attributes:
         __size (int): size of the square
     """
@@ -10,7 +11,6 @@ class Square:
         """Initializing the square
         Args:
            size (int): size of a side of the square
-        
         Returns:
             None
         """
@@ -21,10 +21,9 @@ class Square:
                 raise ValueError("size must be >= 0")
             else:
                 self.__size = size
-    
+    """Area to square"""
     def area(self):
         """calculates the square's area
-
         Returns:
             The area of the square
         """
