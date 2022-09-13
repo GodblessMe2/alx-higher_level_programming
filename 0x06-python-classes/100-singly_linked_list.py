@@ -16,8 +16,8 @@ class Node:
         Returns:
             None
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
     """Property the Getter"""
     @property
     def data(self):
