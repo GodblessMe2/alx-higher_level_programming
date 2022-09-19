@@ -4,7 +4,6 @@
 """
 
 
-
 def say_my_name(first_name, last_name=""):
     """Prints "My name is" followed by the first name and optional last name"""
     if type(first_name) != str:
