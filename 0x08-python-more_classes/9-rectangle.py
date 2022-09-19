@@ -32,8 +32,8 @@ class Rectangle:
            width (int): width of a side of the new rectangle
            height (int): height of a side of the new rectangle
         """
-        self.width = width
         self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     def __del__(self):
