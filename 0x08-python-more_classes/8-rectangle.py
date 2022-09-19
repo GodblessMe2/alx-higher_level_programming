@@ -46,7 +46,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
-            raise TypeError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -59,7 +59,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -67,7 +67,9 @@ class Rectangle:
         return (self.height * self.width)
 
     def perimeter(self):
-        return (self.height + self.width + self.height + self.width)
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return (self.height * 2) + (self.width * 2)
 
     def __str__(self):
         """Return printable string representative of the rectangle"""
