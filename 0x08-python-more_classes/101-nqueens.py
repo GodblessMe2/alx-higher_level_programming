@@ -18,7 +18,7 @@ if __name__ == "__main__":
         print("N must be at least 4")
     exit(1)
 
-    #Initialise the answer list
+    # Initialise the answer list
     for i in range(n):
         a.append([i, None])
 
@@ -28,23 +28,23 @@ if __name__ == "__main__":
             if y == a[x][1]:
                 return True
         return False
-    
+
     def reject(x, y):
         """if exist reject else continue"""
         if (already_exist(y)):
             return False
         i = 0
-        while(i < x):
+        while (i < x):
             if abs(a[i][1] - y) == abs(i - x):
                 return False
             i += 1
         return True
-    
+
     def clear_a(x):
         """Clear the answers if failure is on"""
         for c in range(x, n):
             a[c][1] = None
-    
+
     def noqueens(x):
         """recursive backtracking function to find the solution"""
         for y in range(n):

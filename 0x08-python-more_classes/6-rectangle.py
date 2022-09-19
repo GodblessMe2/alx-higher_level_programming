@@ -9,6 +9,7 @@ class Rectangle:
         _height (int): The height of the new rectangle
     """
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initializing the rectangle
         Args:
@@ -23,12 +24,12 @@ class Rectangle:
         """Prints a string when an instance has been deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-    
+
     @property
     def width(self):
         """Return the current width of the rectangle"""
         return (self.__width)
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -49,13 +50,14 @@ class Rectangle:
         elif value < 0:
             raise TypeError("height must be >= 0")
         self.__height = value
-    
+
     def area(self):
         """Return the area of the rectangle"""
         return (self.height * self.width)
-    
+
     def perimeter(self):
         return (self.height + self.width + self.height + self.width)
+
     def __str__(self):
         """Return printable string representative of the rectangle"""
         string = ""
@@ -63,6 +65,7 @@ class Rectangle:
             string += "\n".join('#' * self.__width
                                 for j in range(self.height))
         return string
+
     def __repr__(self):
         """Return a string representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
