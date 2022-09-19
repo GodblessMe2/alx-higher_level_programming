@@ -18,8 +18,8 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an integer of Rectangle")
         if rect_1.area() >= rect_2.area():
-            return rect_1
-        return rect_2
+            return (rect_1)
+        return (rect_2)
 
     def __init__(self, width=0, height=0):
         """Initializing the rectangle
@@ -27,8 +27,8 @@ class Rectangle:
            width (int): width of a side of the new rectangle
            height (int): height of a side of the new rectangle
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def __del__(self):
