@@ -3,4 +3,5 @@
 
 
 class LockedClass:
-    __slots__ = ["FirstName"]
+    """LockedClass that let the user dynamically create a new instance attribute"""
+    __slots__ = ["first_name"]
