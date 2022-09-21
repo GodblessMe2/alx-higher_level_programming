@@ -14,7 +14,7 @@ Checking for module docstring:
 
 Checking for function docstring:
 	 >>> f = __import__("4-print_square").print_square.__doc__
-         >>> len(f) > 1
+         >>> len(f) < 1
          True
 
 Checking for no args:
