@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Define the class MyInt"""
-from distutils.dir_util import remove_tree
 
 
 class MyInt(int):
