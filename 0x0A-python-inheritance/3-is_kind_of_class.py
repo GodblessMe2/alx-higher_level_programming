@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contains the function is_kind_of_class
+Contains the is_kind_of_class function
 """
 
 
