@@ -4,5 +4,5 @@
 
 def append_write(filename="", text=""):
     """Return a string that was appended to a file"""
-    with open(filename, mode= "a", encoding="utf-8") as f:
+    with open(filename, mode="a", encoding="utf-8") as f:
         return (f.write(text))
