@@ -3,7 +3,9 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Returns a list of lists of integers representing the Pascal’s triangle of n"""
+    """Returns a list of lists of integers
+        representing the Pascal’s triangle of n
+    """
     text = ""
     with open(filename) as f:
         for line in f:
