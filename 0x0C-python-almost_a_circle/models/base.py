@@ -5,18 +5,18 @@ import json
 import turtle
 
 
-
 class Base:
     """Represents a base
        Attributes:
        __self (int): size of a size of the base
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Initializing the base
         Args:
-        size(int): size of a side of the base
-        Return: None
+            size(int): size of a side of the base
+            Return: None
         """
         if id is not None:
             self.id = id
