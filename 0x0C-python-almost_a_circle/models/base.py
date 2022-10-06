@@ -24,7 +24,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
 
-    @classmethod
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON representative of the list_dictionaries"""
         if list_dictionaries is None:
@@ -46,7 +46,7 @@ class Base:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonFile.write(Base.to_json_string(list_dicts))
 
-    @classmethod
+    @staticmethod
     def from_json_string(json_string):
         """Return the deserialization of a JSON string.
         Args:
@@ -67,7 +67,7 @@ class Base:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
         if dictionary and dictionary != {}:
-            if cls.__name == "Rectangle":
+            if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
                 new = cls(1)
@@ -97,7 +97,7 @@ class Base:
             list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
-        with open(filename, "w", "newline") as csvFile:
+        with open(filename, "w", newline="") as csvFile:
             if list_objs is None or list_objs == []:
                 csvFile.write("[]")
             else:
@@ -119,7 +119,7 @@ class Base:
         """
         filename = cls.__name__ + ".csv"
         try:
-            with open(filename, "r", "newline") as csvFile:
+            with open(filename, "r", newline="") as csvFile:
                 if cls.__name__ == "Rectangle":
                     filenames = ["id", "width", "height", "x", "y"]
                 else:
@@ -143,6 +143,7 @@ class Base:
         turt.pensize(3)
         turt.shape("turtle")
         turt.color("#ffffff")
+
         for rect in list_rectangles:
             turt.showturtle()
             turt.up()
