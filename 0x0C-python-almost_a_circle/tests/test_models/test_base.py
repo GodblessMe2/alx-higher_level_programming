@@ -5,14 +5,15 @@
 import unittest
 import os
 # from base import Base
-Base = __import__('models.base').Base
+from models.base import Base
 
 
 class TestBase(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
     def test_no_arg(self):
         b1 = Base()
-        self.assertEqual(b1.id, 1)
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
 
     def test_three_bases(self):
         b1 = Base()
