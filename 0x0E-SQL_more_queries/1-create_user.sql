@@ -1,0 +1,8 @@
+-- Creates the MySQL server user user_0d_1.
+CREATE USER
+    IF NOT EXISTS `user_0d_1`@`localhost`
+    IDENTIFIER BY `user_0d_1_Pwd`
+GRANT ALL PRIVILEGES
+    ON *.* TO `user_0d_1`@`localhost`
+    IDENTIFIER BY `user_0d_1_Pwd`;
+FLUSH PRIVILEGES;
