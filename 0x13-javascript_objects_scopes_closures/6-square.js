@@ -1,5 +1,5 @@
 #!/usr/bin/node
-module.exports = class Square extends require('./5-square') {
+module.exports = class Square extends require('./5-square.js') {
   charPrint (C) {
     if (C === undefined) {
       this.print();
