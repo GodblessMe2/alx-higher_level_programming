@@ -20,5 +20,5 @@ if __name__ == '__main__':
     cursor.execute('SELECT * FROM states ORDER BY states.id ASC;')
 
     states = cursor.fetchall()
-    for state in states:
-        print(state)
+    for state, id in states:
+        print(id, state)
