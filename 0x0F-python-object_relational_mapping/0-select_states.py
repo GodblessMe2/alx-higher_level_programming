@@ -6,6 +6,8 @@
 
 import sys
 import MySQLdb
+hello = sys.argv[0]
+print(hello)
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host=sys.argv[0], user=sys.argv[1],
