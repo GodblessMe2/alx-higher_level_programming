@@ -14,4 +14,7 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3] )
     c = db.cursor()
     c.execute("SELECT * FROM states ORDER BY states.id ASC")
-    [print(states) for states in c.fetchall()]
+
+    states = c.fetchall()
+    for state in states:
+        print(state)
