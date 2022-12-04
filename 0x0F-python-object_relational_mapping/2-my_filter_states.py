@@ -22,7 +22,7 @@ if __name__ == "__main__":
                  name LIKE "%{}%" ORDER BY id'.format(sys.argv[4]))
     rows = cur.fetchall()
     for r in rows:
-        print("({}, '{}')".format(r[0], r[1]))
+         print("({}, '{}')".format(r[0], r[1]))
 
     cur.close()
     db.close()
