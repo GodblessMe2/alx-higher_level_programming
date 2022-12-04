@@ -6,19 +6,24 @@
 
 import sys
 import MySQLdb
-# hello = sys.argv[0]
-# print(hello)
 
 if __name__ == '__main__':
     db = MySQLdb.connect(
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3],
-        port=3306,
+        port=8012,
         host='localhost')
+    # if db.is_connected():
+    #     db_Info = db.get_server_info()
+    #     print("Connected to MySQL Server version ", db_Info)
+    # else:
+    #     print("Error while connecting to MySQL")
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM states ORDER BY states.id ASC;')
+    cursor.execute('SELECT * FROM states')
 
     states = cursor.fetchall()
     for state in states:
         print(state)
+    cursor.close()
+    db.close()
