@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""  script that lists all states starting N from the database hbtn_0e_0_usa: """
+""" script that lists all states starting
+    N from the database hbtn_0e_0_usa:
+"""
 
 if __name__ == "__main__":
     import MySQLdb
