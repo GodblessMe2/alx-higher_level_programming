@@ -3,6 +3,7 @@
 script that takes in an argument and displays all values in the states
 """
 
+
 if __name__ == "__main__":
     import MySQLdb
     import sys
