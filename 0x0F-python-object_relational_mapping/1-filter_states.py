@@ -1,19 +1,24 @@
 #!/usr/bin/python3
-# Lists all states from the database hbtn_0e_0_usa.
-# Usage: ./0-select_state.py <mysql username> \
-#                            <mysql password> \
-#                            <database name>
-
-import sys
-import MySQLdb
+"""  script that lists all states starting N from the database hbtn_0e_0_usa: """
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
+
     db = MySQLdb.connect(
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        port=3306,
-        host='localhost')
-    c = db.cursor()
-    c.query("SELECT * FROM `states` ORDER BY `id`")
-    [print(state) for state in c.fetchall() if state[1][0] == "N"]
+            host="localhost",
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            port=3306,
+            charset='utf8'
+    )
+
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    rows = cur.fetchall()
+    for r in rows:
+        print("({}, '{}')".format(r[0], r[1]))
+
+    cur.close()
+    db.close()
