@@ -1,8 +1,8 @@
 #!/usr/bin/node
 const request = require('request');
-request(process.argv[2], (err, body) => {
-  if (err) {
-    console.log(err);
+request(process.argv[2], (error, response, body) => {
+  if (error) {
+    console.log(error);
   } else {
     let counter = 0;
     const obj = JSON.parse(body).results;
